@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epicurean - Fresh Food Delivered</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Epicurean</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#favorites">Customer Favorites</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#signup">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Indulge in Exquisite Flavors Delivered Fresh to Your Doorstep</h1>
+            <p class="headline">$20 off your first order!</p>
+            <button onclick="scrollToSection('signup')">Order Now</button>
+        </div>
+    </section>
+
+    <section id="favorites" class="favorites">
+        <h2>Customer Favorites</h2>
+        <div class="favorite-cards">
+            <div class="card">
+                <img src="images/meal1.jpg" alt="Meal 1">
+                <h3>Grilled Chicken Salad</h3>
+                <p>A fresh and healthy choice.</p>
+            </div>
+            <div class="card">
+                <img src="images/meal2.jpg" alt="Meal 2">
+                <h3>Momos</h3>
+                <p>Scrumptious! Momos</p>
+            </div>
+            <div class="card">
+                <img src="images/meal3.jpg" alt="Meal 3">
+                <h3>Vegetable Stir-fry</h3>
+                <p>Colorful and full of flavor.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="reviews">
+        <h2>Customer Reviews</h2>
+        <p>Read what our happy customers have to say!</p>
+        <p>"Great service and delicious food!" - Trustpilot</p>
+        <p>"Convenient and tasty meals." - Trustpilot</p>
+        <p>"Will definitely order again!" - Trustpilot</p>
+    </section>
+
+    <section id="signup" class="signup">
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="text" placeholder="Delivery Address" required>
+            <button type="submit">Get Started</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Epicurean. All rights reserved.</p>
+    </footer>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <p>Thank you for signing up! We will get in touch with you shortly.</p>
+            <button onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({behavior: 'smooth'});
+        }
+
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('popup').style.display = 'block';
+        });
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
